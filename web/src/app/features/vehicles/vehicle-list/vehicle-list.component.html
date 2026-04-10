@@ -1,0 +1,42 @@
+<p-toast position="top-right" severity="info"/>
+<div class="container">
+  <div class="hero-theme">
+    <h2>Gerencie a sua frota com o rapidez</h2>
+  </div>
+  <div class="header">
+    <h1>Veículos</h1>
+    <button class="btn-primary" (click)="newVehicle()">+ Novo Veículo</button>
+  </div>
+
+  <table *ngIf="vehicles.length > 0; else empty">
+    <thead>
+      <tr>
+        <th>Placa</th>
+        <th>Modelo</th>
+        <th>Marca</th>
+        <th>Ano</th>
+        <th>Chassi</th>
+        <th>Renavam</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of vehicles">
+        <td>{{ v.placa }}</td>
+        <td>{{ v.modelo }}</td>
+        <td>{{ v.marca }}</td>
+        <td>{{ v.ano }}</td>
+        <td>{{ v.chassi }}</td>
+        <td>{{ v.renavam }}</td>
+        <td class="actions">
+          <button class="btn-edit" (click)="editVehicle(v.id!)">Editar</button>
+          <button class="btn-delete" (click)="deleteVehicle(v.id!)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #empty>
+    <p class="empty">Nenhum veículo cadastrado. Clique em "Novo Veículo" para começar.</p>
+  </ng-template>
+</div>

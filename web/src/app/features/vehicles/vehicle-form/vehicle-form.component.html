@@ -1,0 +1,51 @@
+<p-toast position="top-right" severity="info"/>
+<div class="container">                                                                                                                                                 
+<div class="hero-theme">
+  <h2>{{ isEditing ? 'Editar Veículo' : 'Novo Veículo' }}</h2>
+</div>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="field">
+      <label for="placa">Placa</label>
+      <input id="placa" formControlName="placa" placeholder="ABC-1234" />
+      <span class="error" *ngIf="form.get('placa')?.invalid && form.get('placa')?.touched">Campo obrigatório</span>
+    </div>
+
+    <div class="field">
+      <label for="chassi">Chassi</label>
+      <input id="chassi" formControlName="chassi" placeholder="9BWZZZ377VT004251" />
+      <span class="error" *ngIf="form.get('chassi')?.invalid && form.get('chassi')?.touched">Campo obrigatório</span>
+    </div>
+
+    <div class="field">
+      <label for="renavam">Renavam</label>
+      <input id="renavam" formControlName="renavam" placeholder="12345678901" />
+      <span class="error" *ngIf="form.get('renavam')?.invalid && form.get('renavam')?.touched">Campo obrigatório</span>
+    </div>
+
+    <div class="field">
+      <label for="modelo">Modelo</label>
+      <input id="modelo" formControlName="modelo" placeholder="Civic" />
+      <span class="error" *ngIf="form.get('modelo')?.invalid && form.get('modelo')?.touched">Campo obrigatório</span>
+    </div>
+
+    <div class="field">
+      <label for="marca">Marca</label>
+      <input id="marca" formControlName="marca" placeholder="Honda" />
+      <span class="error" *ngIf="form.get('marca')?.invalid && form.get('marca')?.touched">Campo obrigatório</span>
+    </div>
+
+    <div class="field">
+      <label for="ano">Ano</label>
+      <input id="ano" type="number" formControlName="ano" placeholder="2024" />
+      <span class="error" *ngIf="form.get('ano')?.invalid && form.get('ano')?.touched">Ano inválido</span>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn-cancel" (click)="cancel()">Cancelar</button>
+      <button type="submit" class="btn-submit" [disabled]="form.invalid">
+        {{ isEditing ? 'Salvar Alterações' : 'Cadastrar' }}
+      </button>
+    </div>
+  </form>
+</div>
