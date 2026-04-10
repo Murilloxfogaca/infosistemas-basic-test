@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Web
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
@@ -111,7 +111,3 @@ info-tec/
 cd backend
 npm test
 ```
-# infosistemas-basic-test
-# infosistemas-basic-test
->>>>>>> 1e89867 (first commit)
-# infosistemas-basic-test
